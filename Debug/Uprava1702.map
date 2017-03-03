@@ -1,0 +1,32 @@
+********************************************************************************
+TMS320C6x Hex Converter                                                   v7.4.4
+********************************************************************************
+
+INPUT FILE NAME: <Uprava1702.out>
+OUTPUT FORMAT:   Binary
+
+PHYSICAL MEMORY PARAMETERS
+   Default data width   :   8
+   Default memory width :   8
+   Default output width :   8
+
+BOOT LOADER PARAMETERS
+   Table Address: 0xb0001000, PAGE 0
+   Entry Point  : 0x894200
+
+
+OUTPUT TRANSLATION MAP
+--------------------------------------------------------------------------------
+b0000000..b001ffff  Page=0  Memory Width=8  ROM Width=8  "FLASH"
+--------------------------------------------------------------------------------
+   OUTPUT FILES: Uprava1702.bin [b0..b7]
+
+   CONTENTS: b0000000..b000005f   Uprava1702.out(.boot_load)
+             b0000060..b0000fff   FILL = ffffffff
+             b0001000..b0012b23   BOOT TABLE
+                            .text : btad=b0001000  dest=00883820 size=00010ea0
+                          .switch : btad=b0011eac  dest=00895bac size=00000114
+                           .cinit : btad=b0011fc8  dest=008946c0 size=00000914
+                        .csl_vect : btad=b00128e4  dest=00895800 size=00000200
+                           .const : btad=b0012aec  dest=00895cc0 size=0000002c
+             b0012b24..b001ffff   FILL = ffffffff
